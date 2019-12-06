@@ -22,9 +22,11 @@ public class Program {
 	        
 	        List<SinhVien> lstSV = datasource1.getAll();
 	        for (SinhVien sinhVien : lstSV) {
+				System.out.println(sinhVien.getMaSV());
 				System.out.println(sinhVien.getHoTen());
 				System.out.println(sinhVien.getNgaySinh());
 				System.out.println(sinhVien.isGioiTinhNam()==true? "nam" : "nu");
+				System.out.println("------------------------");
 			}
 //	        datasource1.getAll();
 		} catch (UnknownHostException e) {

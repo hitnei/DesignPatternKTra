@@ -29,7 +29,7 @@ public class SQLServerDatasource implements IDatasource {
 	        while (rs.next()){
 //                System.out.println(rs.getString(3));
 //                boolean gt =  (rs.getBoolean(2)==true)? true : false;
-                SinhVien sv = new SinhVien(rs.getString(1), rs.getString(2), rs.getString(4), rs.getBoolean(3));
+                SinhVien sv = new SinhVien(rs.getString(1), rs.getString(2), rs.getDate(4), rs.getBoolean(3));
                 lst.add(sv);
             }
 //	        System.out.println(lst);
