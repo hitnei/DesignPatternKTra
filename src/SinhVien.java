@@ -3,14 +3,21 @@
 import java.util.Date;
 
 public class SinhVien {
-	String maSV;
+	int maSV;
 	String hoTen;
 	Date ngaySinh;
 	boolean gioiTinhNam;
-	public String getMaSV() {
+	public SinhVien(int maSV, String hoTen, Date ngaySinh, boolean gioiTinhNam) {
+		super();
+		this.maSV = maSV;
+		this.hoTen = hoTen;
+		this.ngaySinh = ngaySinh;
+		this.gioiTinhNam = gioiTinhNam;
+	}
+	public int getMaSV() {
 		return maSV;
 	}
-	public void setMaSV(String maSV) {
+	public void setMaSV(int maSV) {
 		this.maSV = maSV;
 	}
 	public String getHoTen() {
@@ -31,13 +38,8 @@ public class SinhVien {
 	public void setGioiTinhNam(boolean gioiTinhNam) {
 		this.gioiTinhNam = gioiTinhNam;
 	}
-	public SinhVien(String maSV, String hoTen, Date ngaySinh, boolean gioiTinhNam) {
-		super();
-		this.maSV = maSV;
-		this.hoTen = hoTen;
-		this.ngaySinh = ngaySinh;
-		this.gioiTinhNam = gioiTinhNam;
-	}
+
+	
 	
 	
 	

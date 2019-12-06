@@ -2,6 +2,11 @@
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Program {
@@ -15,6 +20,7 @@ public class Program {
 //        }
 
         try {
+        	// getAll();
 			String dc= InetAddress.getLocalHost().getHostName();
 //	        System.out.println(dc);
 	        IDatasource datasource1 = DatasourceFactory.createDatasource(DatasourceType.SQLServerDatasource);
@@ -28,8 +34,19 @@ public class Program {
 				System.out.println(sinhVien.isGioiTinhNam()==true? "nam" : "nu");
 				System.out.println("------------------------");
 			}
-//	        datasource1.getAll();
+	        
+	        // save();
+	        for (SinhVien sinhVien : lstSV) {
+	        	SinhVien sv = sinhVien;
+	        	sv.setMaSV(sinhVien.getMaSV() + lstSV.size());
+			}
+	        
+	        datasource1.save(lstSV);
+	 
 		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
