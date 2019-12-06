@@ -34,20 +34,13 @@ public class Program {
 	        List<SinhVien> lstFromFile = fileSource.getAll();
 	        printOut(lstFromFile);
 
-// 					SQLSERVER
-					String dc= InetAddress.getLocalHost().getHostName();
-//	        System.out.println(dc);
+//	        SQLSERVER
+			String dc= InetAddress.getLocalHost().getHostName();
 	        IDatasource datasource1 = DatasourceFactory.createDatasource(DatasourceType.SQLServerDatasource);
 	        datasource1.connectDatabase(dc, "SinhVien", "sa", "123");
 	        
 	        List<SinhVien> lstSV = datasource1.getAll();
-	        for (SinhVien sinhVien : lstSV) {
-				System.out.println(sinhVien.getMaSV());
-				System.out.println(sinhVien.getHoTen());
-				System.out.println(sinhVien.getNgaySinh());
-				System.out.println(sinhVien.isGioiTinhNam()==true? "nam" : "nu");
-				System.out.println("------------------------");
-			}
+	        printOut(lstSV);
 	        
 	        // save();
 	        for (SinhVien sinhVien : lstSV) {
@@ -55,16 +48,7 @@ public class Program {
 	        	sv.setMaSV(sinhVien.getMaSV() + lstSV.size());
 			}
 	        datasource1.save(lstSV);
-	 
-	        
-
-		} catch (Exception e) {
-
-			
-		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (Exception e) {
+        } catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -10,8 +10,8 @@ public class FakeDatasource implements IDatasource {
 	@Override
 	public List<SinhVien> getAll() {
 		try {
-			SinhVien nvTrung = new SinhVien("001", "Nguyen Van Trung", new SimpleDateFormat("dd/MM/yyyy").parse("31/1/2019"), true);
-			SinhVien lvtLan = new SinhVien("002", "Le Van Tuong Lan", new SimpleDateFormat("dd/MM/yyyy").parse("31/1/2019"), false);
+			SinhVien nvTrung = new SinhVien(1, "Nguyen Van Trung", new SimpleDateFormat("dd/MM/yyyy").parse("31/1/2019"), true);
+			SinhVien lvtLan = new SinhVien(2, "Le Van Tuong Lan", new SimpleDateFormat("dd/MM/yyyy").parse("31/1/2019"), false);
 			List<SinhVien> lst = new ArrayList<SinhVien>();
 			lst.add(nvTrung);
 			lst.add(lvtLan);
