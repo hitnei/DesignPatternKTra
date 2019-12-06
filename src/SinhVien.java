@@ -1,8 +1,9 @@
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SinhVien {
+public class SinhVien implements Serializable {
 	String maSV;
 	String hoTen;
 	Date ngaySinh;
@@ -39,6 +40,9 @@ public class SinhVien {
 		this.gioiTinhNam = gioiTinhNam;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return this.maSV + " - " + this.hoTen + " - " + this.ngaySinh + " - " + this.gioiTinhNam;
+	}
 	
 }

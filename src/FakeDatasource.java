@@ -1,5 +1,7 @@
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,14 +9,19 @@ public class FakeDatasource implements IDatasource {
 
 	@Override
 	public List<SinhVien> getAll() {
-		// TODO Auto-generated method stub
-		SinhVien nvTrung = new SinhVien("001", "Nguyen Van Trung", "12/3/2019", true);
-		SinhVien lvtLan = new SinhVien("002", "Le Van Tuong Lan", "31/1/2019", false);
-		
-		List<SinhVien> lst = new ArrayList<SinhVien>();
-		lst.add(nvTrung);
-		lst.add(lvtLan);
-		return lst;
+		try {
+			SinhVien nvTrung = new SinhVien("001", "Nguyen Van Trung", new SimpleDateFormat("dd/MM/yyyy").parse("31/1/2019"), true);
+			SinhVien lvtLan = new SinhVien("002", "Le Van Tuong Lan", new SimpleDateFormat("dd/MM/yyyy").parse("31/1/2019"), false);
+			List<SinhVien> lst = new ArrayList<SinhVien>();
+			lst.add(nvTrung);
+			lst.add(lvtLan);
+			return lst;
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override
